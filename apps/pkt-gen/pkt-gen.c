@@ -268,17 +268,17 @@ struct glob_arg {
 	int system_cpus;	/* cpus on the system */
 
 	int options;	/* testing */
-#define OPT_PREFETCH	1
-#define OPT_ACCESS	2
-#define OPT_COPY	4
-#define OPT_MEMCPY	8
-#define OPT_TS		16	/* add a timestamp */
-#define OPT_INDIRECT	32	/* use indirect buffers, tx only */
-#define OPT_DUMP	64	/* dump rx/tx traffic */
-#define OPT_RUBBISH	256	/* send wathever the buffers contain */
-#define OPT_RANDOM_SRC  512
-#define OPT_RANDOM_DST  1024
-#define OPT_PPS_STATS   2048
+#define	OPT_PREFETCH	0x00000001
+#define	OPT_ACCESS	0x00000002
+#define	OPT_COPY	0x00000004
+#define	OPT_MEMCPY	0x00000008
+#define	OPT_TS		0x00000010	/* add a timestamp */
+#define	OPT_INDIRECT	0x00000020	/* use indirect buffers, tx only */
+#define	OPT_DUMP	0x00000040	/* dump rx/tx traffic */
+#define	OPT_RUBBISH	0x00000080	/* send wathever the buffers contain */
+#define	OPT_RANDOM_SRC	0x00000100
+#define	OPT_RANDOM_DST	0x00000200
+#define	OPT_PPS_STATS	0x00000400
 	int dev_type;
 #ifndef NO_PCAP
 	pcap_t *p;
